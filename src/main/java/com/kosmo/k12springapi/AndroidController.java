@@ -50,4 +50,36 @@ public class AndroidController {
 		return lists; //JSONArray 타입
 		//배열로 뿌리고 싶으면 ArrayList
 	}
+	
+	
+	/*
+	파라미터로 전달되는 아이디, 패스워드를 request객체가 아닌
+	커맨드객체를 통해 한번에 받고있다. 회원인증 결과를 JSONObject로
+	반환한다.
+	 */
+	@RequestMapping("/android/memberLogin.do")
+	@ResponseBody
+	public Map<String, Object> memberLogin(MemberVO memberVO){
+		System.out.println("Login요청 들어옴");
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		MemberVO memberInfo = 
+				sqlSession.getMapper(IAndroidDAO.class).memberLogin(memberVO);
+		
+		if(memberInfo==null) {
+			//회원정보 불일치로 로그인에 실패한 경우.. 결과만 0으로 내려준다.
+			returnMap.put("isLogin", 0);
+		}
+		else {
+			//기존 방식
+//			memberMap.put("id", memberInfo.getId());
+//			memberMap.put("pass", memberInfo.getPass());
+//			memberMap.put("name", memberInfo.getName());
+			
+			//로그인에 성공하면 결과는 1, 해당 회원의 정보를 객체로 내려준다.
+			returnMap.put("memberInfo", memberInfo);
+			returnMap.put("isLogin", 1);
+		}
+		return returnMap;
+	}
 }

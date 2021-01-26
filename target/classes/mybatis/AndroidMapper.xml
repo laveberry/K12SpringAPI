@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 매퍼이름은 무엇이든 상관이가없다~ -->
+  <mapper namespace="mybatis.IAndroidDAO">
+  <!-- id값은 인터페이스 함수명과 동일해야함 -->
+  <select id="memberList" resultType="mybatis.MemberVO">
+  	select * from member order by regidate desc
+  </select>
+  
+  <!-- 전달되는 파라미터와 반환타입이 모두 MemberVO타입으로 설정됨 -->
+  <select id="memberLogin" resultType="mybatis.MemberVO"
+  	parameterType="mybatis.MemberVO">
+  		SELECT * FROM member WHERE id=#{id} and pass=#{pass}
+  </select>
+  
+  </mapper>

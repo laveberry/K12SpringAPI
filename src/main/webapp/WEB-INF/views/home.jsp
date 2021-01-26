@@ -15,5 +15,9 @@
 	<a href="./android/memberList.do" target="_blank">
 		회원리스트 가져오기(배열형태)
 	</a>
+	<br />
+	<a href="./android/memberLogin.do?id=lave&pass=1004" target="_blank">
+		회원로그인 하기(객체형태)
+	</a>
 </body>
 </html>
