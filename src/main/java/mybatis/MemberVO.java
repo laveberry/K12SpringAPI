@@ -9,6 +9,7 @@ public class MemberVO {
 	private String name;
 	private Date regidate;
 	
+	//getter/setter 반드시 추가!
 	public String getId() {
 		return id;
 	}

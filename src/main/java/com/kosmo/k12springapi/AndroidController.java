@@ -44,7 +44,7 @@ public class AndroidController {
 	@RequestMapping("/android/memberList.do")
 	@ResponseBody
 	public ArrayList<MemberVO> memberList(HttpServletRequest req){
-		
+		System.out.println("요청 들어옴");
 		//JSONArray로 반환할 경우
 		ArrayList<MemberVO> lists = sqlSession.getMapper(IAndroidDAO.class).memberList();
 				
