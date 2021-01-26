@@ -19,5 +19,25 @@
 	<a href="./android/memberLogin.do?id=lave&pass=1004" target="_blank">
 		회원로그인 하기(객체형태)
 	</a>
+	
+	
+	<h2>파일업로드</h2>
+	<il>
+		<a href="./fileUpload/uploadPath.do" target="_blank">
+			upload폴더의 물리적 경로 확인하기
+		</a>
+	</il>
+	<li>
+		<a href="./fileUpload/uploadForm.do" target="_blank">
+			파일업로드 폼
+		</a>
+	</li>
+	<li>
+		<a href="./fileUpload/uploadList.do" target="_blank">
+			파일목록보기
+		</a>
+	</li>
+	
+	
 </body>
 </html>
